@@ -15,6 +15,8 @@ import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { CoursesListComponent } from './courses-list/courses-list.component';
+import { SharedModule } from '../shared/shared.module';
+import { AppMaterialModule } from '../shared/app-material/app-material.module';
 @NgModule({
   declarations: [CoursesComponent, CourseFormComponent, CoursesListComponent],
   imports: [
@@ -30,6 +32,8 @@ import { CoursesListComponent } from './courses-list/courses-list.component';
     MatToolbarModule,
     MatSelectModule,
     MatSnackBarModule,
+    SharedModule,
+    AppMaterialModule
   ],
 })
 export class CoursesModule {}

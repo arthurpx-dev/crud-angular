@@ -6,7 +6,8 @@ import { AppComponent } from './app.component';
 import { provideAnimationsAsync } from '@angular/platform-browser/animations/async';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { HttpClientModule } from '@angular/common/http';
-
+import { ErrorDialogComponent } from './shared/components/error-dialog/error-dialog.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [AppComponent],
   imports: [
@@ -14,8 +15,10 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     MatToolbarModule,
     HttpClientModule,
+    BrowserAnimationsModule
+    
   ],
-  providers: [provideAnimationsAsync()],
+  providers: [],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
