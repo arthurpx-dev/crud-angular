@@ -2,12 +2,12 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ErrorDialogComponent } from './components/error-dialog/error-dialog.component';
 import { AppMaterialModule } from './app-material/app-material.module';
-
-
+import { ConfirmationDialogComponent } from './components/confirmation-dialog/confirmation-dialog.component';
+import { MatButtonModule } from '@angular/material/button';
 
 @NgModule({
-  declarations: [ErrorDialogComponent],
-  imports: [CommonModule, AppMaterialModule],
-  exports:[ErrorDialogComponent]
+  declarations: [ErrorDialogComponent, ConfirmationDialogComponent],
+  imports: [CommonModule, AppMaterialModule, MatButtonModule],
+  exports: [ErrorDialogComponent, ConfirmationDialogComponent],
 })
 export class SharedModule {}

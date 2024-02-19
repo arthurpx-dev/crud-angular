@@ -1,0 +1,21 @@
+<mat-dialog-content>
+  <p class="mensagem">{{ data }}</p>
+</mat-dialog-content>
+<mat-dialog-actions class="btn">
+  <button
+    mat-raised-button
+    color="primary"
+    (click)="onConfirm(true)"
+    class="mensagem"
+  >
+    Sim
+  </button>
+  <button
+    mat-raised-button
+    color="warn"
+    (click)="onConfirm(false)"
+    class="mensagem"
+  >
+    Não
+  </button>
+</mat-dialog-actions>

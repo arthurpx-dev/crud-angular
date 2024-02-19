@@ -1,10 +1,10 @@
-mat-card{
-max-width: 80%;
-margin: 2em auto;
-text-align: center;
+mat-card {
+  max-width: 80%;
+  margin: 2em auto;
+  text-align: center;
 }
 
-.column-flex{
+.column-flex {
   display: flex;
   flex-direction: column;
   min-width: 300px;
@@ -12,7 +12,7 @@ text-align: center;
 
 .loading-spinner {
   padding: 25px;
-  background: rgba(0, 0,0,0.15);
+  background: rgba(0, 0, 0, 0.15);
   display: flex;
   align-items: center;
   justify-content: center;
