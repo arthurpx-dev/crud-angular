@@ -2,11 +2,11 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
 import { CoursesRoutingModule } from './courses-routing.module';
-import { CoursesComponent } from './courses/courses.component';
+import { CoursesComponent } from './containers/courses/courses.component';
 import { MatTableModule } from '@angular/material/table';
 import { MatIconModule } from '@angular/material/icon';
 import { MatButtonModule } from '@angular/material/button';
-import { CourseFormComponent } from './course-form/course-form.component';
+
 import { ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
@@ -14,11 +14,12 @@ import { MatCardModule } from '@angular/material/card';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatSelectModule } from '@angular/material/select';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
-import { CoursesListComponent } from './courses-list/courses-list.component';
+import { CoursesListComponent } from './components/courses-list/courses-list.component';
 import { SharedModule } from '../shared/shared.module';
 import { AppMaterialModule } from '../shared/app-material/app-material.module';
+import { CourseFormComponent } from './containers/course-form/course-form.component';
 @NgModule({
-  declarations: [CoursesComponent, CourseFormComponent, CoursesListComponent],
+  declarations: [CoursesComponent, CoursesListComponent, CourseFormComponent],
   imports: [
     CommonModule,
     CoursesRoutingModule,

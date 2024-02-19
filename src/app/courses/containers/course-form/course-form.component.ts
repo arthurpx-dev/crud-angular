@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormControl, FormGroup } from '@angular/forms';
-import { CoursesService } from '../services/courses.service';
+import { CoursesService } from '../../services/courses.service'; 
 import { MatSnackBar } from '@angular/material/snack-bar';
 import { Location } from '@angular/common';
-import { Course } from '../model/course';
+import { Course } from '../../model/course'; 
+import { ActivatedRoute } from '@angular/router';
 
 @Component({
   selector: 'app-course-form',
@@ -12,6 +13,7 @@ import { Course } from '../model/course';
 })
 export class CourseFormComponent implements OnInit {
   form = this.formBuilder.group({
+    _id: new FormControl<String | null>(''),
     name: new FormControl<String | null>(''),
     category: new FormControl<String | null>(''),
   }); // Quando tem um grupo de campos
@@ -20,8 +22,8 @@ export class CourseFormComponent implements OnInit {
     private formBuilder: FormBuilder,
     private service: CoursesService,
     private snackBar: MatSnackBar,
-    private location: Location
-  ) {
+    private location: Location,
+    private route: ActivatedRoute  ) {
     // this.form = this.formBuilder.group({
     //   name: new FormControl<String | null>(null),
     //   category: new FormControl<String | null>(null),
@@ -29,6 +31,13 @@ export class CourseFormComponent implements OnInit {
   }
   ngOnInit(): void {
     // this.form.value;
+    const course:Course = this.route.snapshot.data['course']; 
+    this.form.setValue({
+      _id: course._id,
+      name: course.name,  // Formulários tipados
+      category: course.category
+    })
+    console.log(course);
   }
 
   onSubmit() {
