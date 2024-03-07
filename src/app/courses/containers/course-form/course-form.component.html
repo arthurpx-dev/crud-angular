@@ -6,8 +6,8 @@
       <mat-form-field class="full-width">
         <mat-label>Nome</mat-label>
         <input matInput formControlName="name" required />
-        <mat-hint align="end"
-          >{{ form.get("name")?.value?.length }}/100</mat-hint
+        <mat-hint align="end">
+          {{ form.get("name")?.value?.length }}/100</mat-hint
         >
         <mat-error *ngIf="form.get('name')?.invalid">{{
           onErrorValidation("name")
@@ -18,8 +18,8 @@
         <mat-label>Categoria</mat-label>
         <mat-select formControlName="category">
           <mat-option value=""></mat-option>
-          <mat-option value="front-end">Front-End</mat-option>
-          <mat-option value="back-end">Back-End</mat-option>
+          <mat-option value="Front-end">Front-End</mat-option>
+          <mat-option value="Back-end">Back-End</mat-option>
         </mat-select>
         <mat-error *ngIf="form.get('category')?.invalid">{{
           onErrorValidation("category")

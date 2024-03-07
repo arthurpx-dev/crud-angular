@@ -1,23 +1,15 @@
 .error {
   font-size: 26px;
   font-family: Arial, Helvetica, sans-serif;
-  color: red;
   font-weight: bolder;
-  -webkit-text-stroke-width: 0.5px;
-  -webkit-text-stroke-color: rgb(25, 25, 25);
 }
 .mensagem {
   font-family: Arial, Helvetica, sans-serif;
   font-size: 16px;
   color: black;
-  font-weight: bold;
 }
 
 .action-close {
   display: flex;
   justify-content: center;
-}
-.custom-button {
-  font-size: 16px;
-  padding: 10px;
 }
