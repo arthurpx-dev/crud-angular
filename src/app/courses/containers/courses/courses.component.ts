@@ -30,9 +30,9 @@ export class CoursesComponent implements OnInit {
   refresh() {
     this.courses$ = this.courseService.list().pipe(
       catchError((error) => {
+        console.error(error);
         this.onError('Erro ao carregar cursos.');
         return of([]);
-      
       })
     );
   }

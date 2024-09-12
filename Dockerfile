@@ -1,36 +1,12 @@
-# Etapa 1: Build da aplicação Angular
-FROM node:18.19.0 AS builder
-
+FROM node:22 AS builder
 WORKDIR /app
-COPY package.json package-lock.json ./
-RUN npm install
-
-# Copiando o código da aplicação
 COPY . .
+RUN npm install
+RUN npm run build
 
-# Executando o build da aplicação Angular
-RUN npm run build -- --configuration production
-
-# Etapa 2: Servir a aplicação usando Nginx
-FROM nginx:1.27.1-alpine
-
-WORKDIR /www
-
-# Limpar o diretório padrão do Nginx
-RUN rm -rf /usr/share/nginx/html/*
-
-# Copiar os arquivos construídos da etapa anterior para o diretório do Nginx
-COPY --from=builder /app/dist/crud-angular /www/crud-angular
-
-# Copiar configuração personalizada do Nginx (se necessário)
+FROM  nginx:alpine
+COPY --from=builder /app/dist/crud-angular/browser usr/share/nginx/html
 COPY nginx.conf /etc/nginx/nginx.conf
-
-# Ajustar permissões
-RUN chown -R nginx:nginx /www
-
-# Expondo as portas
+COPY mime.types /etc/nginx/mime.types
 EXPOSE 80
-EXPOSE 443
-
-# Comando para iniciar o Nginx
-CMD ["nginx", "-g", "daemon off;"]
+CMD [ "nginx", "-g","daemon off;"]

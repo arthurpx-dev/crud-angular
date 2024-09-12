@@ -1,0 +1,16 @@
+version: "3.8"
+
+services:
+  frontend:
+    build:
+      context: .
+    ports:
+      - "4200:4200"
+    networks:
+      - mynetwork
+    environment:
+      - PROXY_CONFIG=proxy.conf.js
+
+networks:
+  mynetwork:
+    external: true
